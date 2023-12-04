@@ -6,6 +6,10 @@
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
 
 <!-- В блок контент весь твій хтмл для сторінки -->
 {% block content %}
