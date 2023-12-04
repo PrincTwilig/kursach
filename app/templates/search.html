@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - My Flask App{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}
+
+
+<!-- В блок контент весь твій хтмл для сторінки -->
+{% block content %}
+    <h2>Hello, my lord! Welcome to the Search!!!</h2>
+    <p>This is where the magic happens.</p>
+    <!-- Add more content as needed -->
+{% endblock %}
