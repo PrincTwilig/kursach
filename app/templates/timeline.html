@@ -3,11 +3,16 @@
 {% block title %}Timeline page{% endblock %}
 
 {% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
 <script src="{{ url_for('static', filename='js/timeline.js') }}"></script>
 {% endblock %}
 
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 {% endblock %}
 
 
@@ -23,18 +28,20 @@
         <section class="itemSecong">
             <h2>Конкретна дата</h2>
             <h4>Обиріть конкретну дату, щоб спостерігати сезонну змінність на ринку нерухомості країн Європи:</h4>
-            <input type="date" name="date">
-            <button class="btn btn-primary">
+            <input id="heat-map-date" type="date" name="date">
+            <button id="heat-map-button" class="btn btn-primary">
                 Пошук <i class="bi bi-search"></i>
             </button>
             <p>Дата, введена користувачем: <strong>{{ date }}</strong></p>
-            <img src="{{ url_for('static', filename='img/diagram_3.png') }}" alt="diagram_3">
+            <div id="heat-map" style="height: 500px;"></div>
+            <canvas id="top-cities"></canvas>
+            <!-- <img src="{{ url_for('static', filename='img/diagram_3.png') }}" alt="diagram_3"> -->
         </section>
         <section class="itemThird">
             <h2>Порівняння</h2>
             <h4>Обиріть пункти, щоб отримати більш детальну інформацію:</h4>
             <section class="SearchOne">
-                <select name="city" id="city" disabled>
+                <select id="comparison-city" name="city">
                     <option value="">Місто</option>
                     <option value="Данія">Данія</option>
                     <option value="Ірландія">Ірландія</option>
@@ -46,16 +53,17 @@
                     <option value="Франція">Франція</option>
                     <option value="Швеція">Швеція</option>
                 </select>
-                <select name="property_type" id="property_type" disabled>
+                <select id="comparison-property-type" name="property_type">
                     <option value="">Тип нерухомості</option>
                     <option value="Будинок">Будинок</option>
                     <option value="Квартира">Квартира</option>
                     <option value="Кімната">Кімната</option>
                 </select>
-                <input type="date" name="date">
-                <input type="date" name="date">
-                <button class="btn btn-primary">Порівняти</button>
-                <img src="{{ url_for('static', filename='img/diagram_4.png') }}" alt="diagram_4">
+                <input id="comparison-date-start" type="date" name="date">
+                <input id="comparison-date-end" type="date" name="date">
+                <button class="btn btn-primary" id="comparison-button">Порівняти</button>
+                <canvas id="comparison-chart"></canvas>
+                <img id="tmp-comp-img" src="{{ url_for('static', filename='img/diagram_4.png') }}" alt="diagram_4">
             </section>
         </section>
         <section class="itemFourth">
