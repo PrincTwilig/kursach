@@ -3,17 +3,66 @@
 {% block title %}Main page{% endblock %}
 
 {% block scripts %}
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 {% endblock %}
 
 
 <!-- В блок контент весь твій хтмл для сторінки -->
 {% block content %}
-    <h2>Hello, my lord! Welcome to the Home Page!</h2>
-    <p>This is where the magic happens.</p>
-    <!-- Add more content as needed -->
+<main>
+    <article>
+        <section class="itemFirst">
+            <h1>Аналіз ринку нерухомості Європи:<br>динаміка та сезонність</h1>
+            <h4>Цей веб-сайт буде корисним для всіх, хто цікавиться ринком нерухомості Європи. Він може бути
+                використаний для отримання інформації про тенденції на ринку, для прийняття рішень про інвестування в
+                нерухомість, а також для загального розуміння ринку.</h4>
+            <button class="btn btn-primary">Динаміка ринку</button>
+            <button class="btn btn-primary">Сезонна змінність</button>
+            <h5>Детальніше</h5>
+            <i class="bi bi-arrow-down"></i>
+        </section>
+        <section class="itemSecong">
+            <h2>Як цей сайт може допомогти вам?</h2>
+
+        </section>
+        <section class="itemThird">
+            <h2>Динаміка ринку</h2>
+            <h3>Ринок нерухомості Європи демонструє позитивну динаміку протягом останніх років. У 2022 році ціни на
+                нерухомість у регіоні зросли на 7,5%, а кількість угод з продажу збільшилася на 5,5%.</h3>
+            <h3>Це зростання зумовлено низкою факторів, включаючи:</h3>
+            <ul class="list">
+                <li>Зростання економіки Європи</li>
+                <li>Зниження процентних ставок</li>
+                <li>Зростаюча потреба в житлі</li>
+            </ul>
+            <h3>Очікується, що позитивна динаміка ринку нерухомості Європи продовжиться і в 2023 році. Ціни на
+                нерухомість, ймовірно, зростуть на 6%, а кількість угод з продажу збільшиться на 4%.</h3>
+            <button class="btn btn-primary">
+                Детальніше <i class="bi bi-arrow-right"></i>
+            </button>
+        </section>
+        <section class="itemFourth">
+            <h2>Сезонність</h2>
+            <h3>Ринок нерухомості Європи має певну сезонність. Найбільш сприятливим часом для продажу нерухомості є
+                весна та літо. У ці сезони ціни на нерухомість зазвичай вищі, а кількість угод з продажу збільшується.
+            </h3>
+            <h3>Найбільш несприятливим часом для продажу нерухомості є осінь та зима. У ці сезони ціни на нерухомість
+                зазвичай нижчі, а кількість угод з продажу зменшується.</h3>
+            <button class="btn btn-primary">
+                Детальніше <i class="bi bi-arrow-right"></i>
+            </button>
+        </section>
+        <section class="itemFifth">
+            <h2>Географічні відмінності</h2>
+            <h3>Ціни на нерухомість в Європі в цілому зростають. Однак темпи зростання цін на нерухомість відрізняються
+                в різних країнах. </h3>
+            
+        </section>
+    </article>
+</main>
+
 {% endblock %}

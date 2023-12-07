@@ -3,17 +3,72 @@
 {% block title %}Timeline page{% endblock %}
 
 {% block scripts %}
-    <script src="{{ url_for('static', filename='js/timeline.js') }}"></script>
+<script src="{{ url_for('static', filename='js/timeline.js') }}"></script>
 {% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
 {% endblock %}
 
 
 <!-- В блок контент весь твій хтмл для сторінки -->
 {% block content %}
-    <h2>Hello, my lord! Welcome to the TimeLine!!</h2>
-    <p>This is where the magic happens.</p>
-    <!-- Add more content as needed -->
+<main>
+    <article>
+        <section class="itemFirst">
+            <h1>Сезонна змінність</h1>
+            <h3>Сезонна змінність є одним із важливих факторів, що впливають на ринок нерухомості. Вона проявляється у
+                змінах цін та попиту на житло в різні пори року.</h3>
+        </section>
+        <section class="itemSecong">
+            <h2>Конкретна дата</h2>
+            <h4>Обиріть конкретну дату, щоб спостерігати сезонну змінність на ринку нерухомості країн Європи:</h4>
+            <input type="date" name="date">
+            <button class="btn btn-primary">
+                Пошук <i class="bi bi-search"></i>
+            </button>
+            <p>Дата, введена користувачем: <strong>{{ date }}</strong></p>
+            <img src="{{ url_for('static', filename='img/diagram_3.png') }}" alt="diagram_3">
+        </section>
+        <section class="itemThird">
+            <h2>Порівняння</h2>
+            <h4>Обиріть пункти, щоб отримати більш детальну інформацію:</h4>
+            <section class="SearchOne">
+                <select name="city" id="city" disabled>
+                    <option value="">Місто</option>
+                    <option value="Данія">Данія</option>
+                    <option value="Ірландія">Ірландія</option>
+                    <option value="Німеччина">Німеччина</option>
+                    <option value="Португалія">Португалія</option>
+                    <option value="Італія">Італія</option>
+                    <option value="Іспанія">Іспанія</option>
+                    <option value="Нідерланди">Нідерланди</option>
+                    <option value="Франція">Франція</option>
+                    <option value="Швеція">Швеція</option>
+                </select>
+                <select name="property_type" id="property_type" disabled>
+                    <option value="">Тип нерухомості</option>
+                    <option value="Будинок">Будинок</option>
+                    <option value="Квартира">Квартира</option>
+                    <option value="Кімната">Кімната</option>
+                </select>
+                <input type="date" name="date">
+                <input type="date" name="date">
+                <button class="btn btn-primary">Порівняти</button>
+                <img src="{{ url_for('static', filename='img/diagram_4.png') }}" alt="diagram_4">
+            </section>
+        </section>
+        <section class="itemFourth">
+            <h2>Графіки змін між датами</h2>
+            <h4>Обиріть конкретну дату, щоб спостерігати сезонну змінність на ринку нерухомості країн Європи:</h4>
+            <input type="date" name="date">
+            <button class="btn btn-primary">
+                Пошук <i class="bi bi-search"></i>
+            </button>
+            
+            <img src="{{ url_for('static', filename='img/diagram_5.png') }}" alt="diagram_5">
+        </section>
+    </article>
+</main>
+
 {% endblock %}

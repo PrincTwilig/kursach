@@ -1,19 +1,79 @@
 {% extends 'base.html' %}
 
-{% block title %}Search page{% endblock %}
+{% block title %}Динаміка ринку{% endblock %}
 
 {% block scripts %}
-    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
 {% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
 {% endblock %}
 
 
 <!-- В блок контент весь твій хтмл для сторінки -->
 {% block content %}
-    <h2>Hello, my lord! Welcome to the Search!!!</h2>
-    <p>This is where the magic happens.</p>
-    <!-- Add more content as needed -->
+<main>
+    <article>
+        <section class="itemFirst">
+            <h1>Динаміка ринку</h1>
+            <p>Динаміка ринку нерухомості є важливим фактором, який слід враховувати при плануванні інвестицій у
+                нерухомість. Вона проявляється у змінах цін та попиту на житло в різні періоди часу.</p>
+        </section>
+        <section class="itemSecong">
+            <h2>Нерухомості за типом в місті</h2>
+            <h4>Обиріть конкретне місто та тип нерухомості, щоб отримати більш детальну інформацію:</h4>
+            <section class="SearchOne">
+                <select name="city" id="city" disabled>
+                    <option value="">Місто</option>
+                    <option value="Данія">Данія</option>
+                    <option value="Ірландія">Ірландія</option>
+                    <option value="Німеччина">Німеччина</option>
+                    <option value="Португалія">Португалія</option>
+                    <option value="Італія">Італія</option>
+                    <option value="Іспанія">Іспанія</option>
+                    <option value="Нідерланди">Нідерланди</option>
+                    <option value="Франція">Франція</option>
+                    <option value="Швеція">Швеція</option>
+                </select>
+                <select name="property_type" id="property_type" disabled>
+                    <option value="">Тип нерухомості</option>
+                    <option value="Будинок">Будинок</option>
+                    <option value="Квартира">Квартира</option>
+                    <option value="Кімната">Кімната</option>
+                </select>
+                <button class="btn btn-primary">
+                    Пошук <i class="bi bi-search"></i>
+                </button>
+            </section>
+            <img src="{{ url_for('static', filename='img/diagram_1.png') }}" alt="diagram_1">
+        </section>
+        <section class="itemThird">
+            <h2>Ціна та квадратні метри</h2>
+            <h4>Обиріть конкретну ціну та квадратні метри, щоб отримати більш детальну інформацію:</h4>
+            <input type="text" list="prices" placeholder="Ціна" onchange="handleChange()">
+            <datalist id="prices">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+            </datalist>
+            <input type="text" list="square_meters" placeholder="Введіть квадратні метри" onchange="handleChange()">
+            <datalist id="square_meters">
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+            </datalist>
+
+            <button class="btn btn-primary" type="submit">Пошук <i class="bi bi-search"></i></button>
+
+            <img src="{{ url_for('static', filename='img/diagram_2.png') }}" alt="diagram_2">
+        </section>
+        <section class="itemFourth">
+            <h2>Топ по містам</h2>
+            <h4>Ми зібрали для вас список міст Європи, які пропонують найкраще співвідношення ціни та якості
+                нерухомості:</h4>
+        </section>
+    </article>
+</main>
+<!-- Add more content as needed -->
 {% endblock %}
