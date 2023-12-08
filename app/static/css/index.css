@@ -1,1 +1,18 @@
 /* css of index page */
+.picture{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    right: 0;
+    left: 0;
+    padding-top: 2vw;
+}
+
+.itemFirst{
+    padding-top: 8vw;
+}
+
+.item1 h4{
+    padding-top: 2vw;
+    padding-bottom: 3.4vw;
+}

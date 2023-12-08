@@ -1,1 +1,52 @@
 /* css of all pages */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Raleway&display=swap');
+
+body {
+    margin-right: 11.458vw;
+    margin-left: 11.458vw;
+  }
+  
+h1{
+    font-size: 3.4vw;
+    font-family: 'Comfortaa', sans-serif;
+}
+h2{
+    font-size: 3vw;
+    font-family: 'Comfortaa', sans-serif;
+}
+h3{
+    font-size: 1.7vw;
+    font-family: 'Raleway', sans-serif;
+}
+h4{
+    font-size: 1.3vw;
+    font-family: 'Raleway', sans-serif;
+}
+h5{
+    font-size: 1vw;
+    font-family: 'Raleway', sans-serif;
+}
+
+button{
+    font-size: 1.7vw;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+section{
+    padding-bottom: 6.944vw;
+}
+
+header{
+    padding-top: 1vw;
+}
+
+.navMenu ul{ 
+    gap: 3vw;
+    list-style-type: none;
+}
+
+.itemFirst{
+    padding-top: 3vw;
+}
+
