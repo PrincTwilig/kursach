@@ -1,5 +1,5 @@
 # processing tools will be here
-from app.models import SpiderOutputHistory
+from app.models import SpiderOutputHistory, SpiderOutput
 from peewee import fn
 import json
 
@@ -69,3 +69,24 @@ def generate_price_range_between_dates(start, end, country, property_type='apart
         
 
     return avg_rent
+
+def generate_pie_for_property(country):
+
+    # make data for pie chart, [property_type, count]
+    data = SpiderOutput.select(SpiderOutput.property_type, fn.COUNT(SpiderOutput.property_type).alias(
+        'count')).where(SpiderOutput.country == country).group_by(SpiderOutput.property_type)
+    
+    data = [{'property_type': x.property_type, 'count': x.count} for x in data if x.property_type]
+
+    return data
+
+def generate_top_cities():
+
+    # make data for bar chart, [city, count]
+    # make top 10 cities by count
+    data = SpiderOutput.select(SpiderOutput.city, fn.COUNT(SpiderOutput.city).alias(
+        'count')).group_by(SpiderOutput.city).order_by(fn.COUNT(SpiderOutput.city).desc()).limit(10)
+    
+    data = [{'city': x.city, 'count': x.count} for x in data if x.city]
+
+    return data

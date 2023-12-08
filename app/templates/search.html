@@ -3,6 +3,8 @@
 {% block title %}Динаміка ринку{% endblock %}
 
 {% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/search.js') }}"></script>
 {% endblock %}
 
@@ -24,7 +26,7 @@
             <h2>Нерухомості за типом в місті</h2>
             <h4>Обиріть конкретне місто та тип нерухомості, щоб отримати більш детальну інформацію:</h4>
             <section class="SearchOne">
-                <select name="city" id="city" disabled>
+                <select name="city" id="prop-graph-city">
                     <option value="">Місто</option>
                     <option value="Данія">Данія</option>
                     <option value="Ірландія">Ірландія</option>
@@ -36,42 +38,18 @@
                     <option value="Франція">Франція</option>
                     <option value="Швеція">Швеція</option>
                 </select>
-                <select name="property_type" id="property_type" disabled>
-                    <option value="">Тип нерухомості</option>
-                    <option value="Будинок">Будинок</option>
-                    <option value="Квартира">Квартира</option>
-                    <option value="Кімната">Кімната</option>
-                </select>
-                <button class="btn btn-primary">
+                <button id="prop-graph-button" class="btn btn-primary">
                     Пошук <i class="bi bi-search"></i>
                 </button>
             </section>
-            <img src="{{ url_for('static', filename='img/diagram_1.png') }}" alt="diagram_1">
-        </section>
-        <section class="itemThird">
-            <h2>Ціна та квадратні метри</h2>
-            <h4>Обиріть конкретну ціну та квадратні метри, щоб отримати більш детальну інформацію:</h4>
-            <input type="text" list="prices" placeholder="Ціна" onchange="handleChange()">
-            <datalist id="prices">
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="300">300</option>
-            </datalist>
-            <input type="text" list="square_meters" placeholder="Введіть квадратні метри" onchange="handleChange()">
-            <datalist id="square_meters">
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="40">40</option>
-            </datalist>
-
-            <button class="btn btn-primary" type="submit">Пошук <i class="bi bi-search"></i></button>
-
-            <img src="{{ url_for('static', filename='img/diagram_2.png') }}" alt="diagram_2">
+            <canvas id="prop-graph"></canvas>
+            <img id="tmp-prop-graph-img" src="{{ url_for('static', filename='img/diagram_1.png') }}" alt="diagram_1">
         </section>
         <section class="itemFourth">
             <h2>Топ по містам</h2>
             <h4>Ми зібрали для вас список міст Європи, які пропонують найкраще співвідношення ціни та якості
                 нерухомості:</h4>
+            <canvas id="top-graph"></canvas>
         </section>
     </article>
 </main>

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from app.tools import generate_heetmap_by_date, generate_price_range_between_dates
+from app.tools import generate_heetmap_by_date, generate_price_range_between_dates, generate_pie_for_property, generate_top_cities
 
 import datetime
 
@@ -47,3 +47,22 @@ def hello_world_2():
     property_type = payload.get('property_type', 'apartment')
 
     return generate_price_range_between_dates(start, end, country, property_type)
+
+@app.route('/api/v1/search-by-property', methods=['GET'])
+def hello_world_3():
+    # url example: /api/v1/search-by-property?country=germany
+
+    payload = request.args.to_dict()
+
+    if payload is None or payload.get('country') is None:
+        return 'Please provide a country', 400
+    
+    country = payload.get('country', 'germany')
+
+    return generate_pie_for_property(country)
+
+@app.route('/api/v1/get-top-cities', methods=['GET'])
+def hello_world_4():
+    # url example: /api/v1/get-top-cities
+
+    return generate_top_cities()
