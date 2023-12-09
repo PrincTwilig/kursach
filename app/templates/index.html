@@ -23,46 +23,115 @@
                     використаний для отримання інформації про тенденції на ринку, для прийняття рішень про інвестування
                     в нерухомість, а також для загального розуміння ринку.</h4>
             </article>
-            <button class="btn btn-primary">Динаміка ринку</button>
-            <button class="btn btn-primary">Сезонна змінність</button>
-            <h5>Детальніше</h5>
-            <i class="bi bi-arrow-down"></i>
+            <article class="item2 d-inline-flex grid gap-3">
+                <button class="btn bg-success text-white rounded-5 px-4 fw-semibold"><a class="nav-link"
+                        href="{{ url_for('search') }}">Динаміка
+                        ринку</a></button>
+                <button class="btn border-2 border-primary text-primary rounded-5 px-4 fw-semibold"><a class="nav-link"
+                        href="{{ url_for('timeline') }}">Сезонна
+                        змінність</a></button>
+            </article>
+            <article class="item3">
+                <h5 class="d-flex justify-content-center fw-semibold">Детальніше</h5>
+                <i class="bi bi-arrow-down d-flex justify-content-center"></i>
+            </article>
         </section>
-        <section class="itemSecong">
-            <h2>Як цей сайт може допомогти вам?</h2>
-
+        <section class="itemSecong d-flex flex-column grid gap-5">
+            <h2 class="text-center">Як цей сайт може допомогти вам?</h2>
+            <article class="item4 d-flex justify-content-center grid gap-5">
+                <article class="item4-1 bg-success text-white rounded-5 p-5 mh-100 d-flex flex-column grid gap-4"
+                    style="width: 35vw; height: 19vw;">
+                    <i class="bi bi-exclamation-circle d-flex justify-content-center"
+                        style="color: white; font-size: 4vw;"></i>
+                    <h4>Актуальна інформація про ринок нерухомості країн Європи</h4>
+                </article>
+                <article
+                    class="item4-2 border border-primary border-3 p-5 rounded-5 mh-100 d-flex flex-column grid gap-4"
+                    style="width: 35vw; height: 19vw;">
+                    <i class="bi bi-graph-up-arrow d-flex justify-content-center"
+                        style="color: #0D6EFD; font-size: 4vw;"></i>
+                    <h4>Інформація про основні фактори, які впливають на динаміку та сезонність ринку нерухомості</h4>
+                </article>
+                <article class="item4-3 bg-success text-white rounded-5 p-5 mh-100 d-flex flex-column grid gap-4"
+                    style="width: 35vw; height: 19vw;">
+                    <i class="bi bi-search-heart d-flex justify-content-center"
+                        style="color: white; font-size: 4vw;"></i>
+                    <h4>Ми допоможемо вам зробити більш обґрунтовані рішення про придбання або продаж нерухомості</h4>
+                </article>
+            </article>
         </section>
-        <section class="itemThird">
+        <section class="itemThird d-flex flex-column grid gap-4">
             <h2>Динаміка ринку</h2>
-            <h3>Ринок нерухомості Європи демонструє позитивну динаміку протягом останніх років. У 2022 році ціни на
-                нерухомість у регіоні зросли на 7,5%, а кількість угод з продажу збільшилася на 5,5%.</h3>
-            <h3>Це зростання зумовлено низкою факторів, включаючи:</h3>
-            <ul class="list">
-                <li>Зростання економіки Європи</li>
-                <li>Зниження процентних ставок</li>
-                <li>Зростаюча потреба в житлі</li>
-            </ul>
-            <h3>Очікується, що позитивна динаміка ринку нерухомості Європи продовжиться і в 2023 році. Ціни на
-                нерухомість, ймовірно, зростуть на 6%, а кількість угод з продажу збільшиться на 4%.</h3>
-            <button class="btn btn-primary">
-                Детальніше <i class="bi bi-arrow-right"></i>
+            <article class="d-flex flex-column grid gap-3">
+                <h3>Ринок нерухомості Європи демонструє позитивну динаміку протягом останніх років. У 2022 році ціни на
+                    нерухомість у регіоні зросли на 7,5%, а кількість угод з продажу збільшилася на 5,5%.</h3>
+                <h3>Це зростання зумовлено низкою факторів, включаючи:</h3>
+                <ul class="list">
+                    <li>Зростання економіки Європи</li>
+                    <li>Зниження процентних ставок</li>
+                    <li>Зростаюча потреба в житлі</li>
+                </ul>
+                <h3>Очікується, що позитивна динаміка ринку нерухомості Європи продовжиться і в 2023 році. Ціни на
+                    нерухомість, ймовірно, зростуть на 6%, а кількість угод з продажу збільшиться на 4%.</h3>
+            </article>
+            <button class="btn bg-success text-white rounded-5 px-4 fw-semibold d-inline-flex grid gap-2"
+                style="width: 13.6vw; height: 2.7vw;"><a class="nav-link" href="{{ url_for('search') }}">
+                    Детальніше <i class="bi bi-arrow-right"></i>
             </button>
         </section>
-        <section class="itemFourth">
+        <section class="itemFourth d-flex flex-column grid gap-4">
             <h2>Сезонність</h2>
-            <h3>Ринок нерухомості Європи має певну сезонність. Найбільш сприятливим часом для продажу нерухомості є
-                весна та літо. У ці сезони ціни на нерухомість зазвичай вищі, а кількість угод з продажу збільшується.
-            </h3>
-            <h3>Найбільш несприятливим часом для продажу нерухомості є осінь та зима. У ці сезони ціни на нерухомість
-                зазвичай нижчі, а кількість угод з продажу зменшується.</h3>
-            <button class="btn btn-primary">
-                Детальніше <i class="bi bi-arrow-right"></i>
+            <article class="d-flex flex-column grid gap-3">
+                <h3>Ринок нерухомості Європи має певну сезонність. Найбільш сприятливим часом для продажу нерухомості є
+                    весна та літо. У ці сезони ціни на нерухомість зазвичай вищі, а кількість угод з продажу
+                    збільшується.
+                </h3>
+                <h3>Найбільш несприятливим часом для продажу нерухомості є осінь та зима. У ці сезони ціни на
+                    нерухомість
+                    зазвичай нижчі, а кількість угод з продажу зменшується.</h3>
+            </article>
+            <button class="btn bg-success text-white rounded-5 px-4 fw-semibold d-inline-flex grid gap-2"
+                style="width: 13.6vw; height: 2.7vw;"><a class="nav-link" href="{{ url_for('timeline') }}">
+                    Детальніше <i class="bi bi-arrow-right"></i>
             </button>
         </section>
-        <section class="itemFifth">
+        <section class="itemFifth d-flex flex-column grid gap-4">
             <h2>Географічні відмінності</h2>
             <h3>Ціни на нерухомість в Європі в цілому зростають. Однак темпи зростання цін на нерухомість відрізняються
                 в різних країнах. </h3>
+            <article class="d-flex justify-content-center grid gap-5">
+                <article class="border border-success border-3 p-5 rounded-5 mh-100 d-flex flex-column grid gap-4" style="width: 35vw; height: 20vw;">
+                    <h3><i class="bi bi-graph-up-arrow" style="color: #198754; font-size: 2vw;"></i>  Найбільше ціни на нерухомість зростають у таких країнах, як Ірландія, Португалія та Іспанія.</h3>
+                    <h3>У цих країнах ціни на нерухомість зростають на 10-15% щорічно.</h3>
+                </article>
+                <article class="border border-primary border-3 p-5 rounded-5 mh-100 d-flex flex-column grid gap-4" style="width: 35vw; height: 20vw;">
+                    <h3><i class="bi bi-graph-down-arrow" style="color: #0D6EFD; font-size: 2vw;"></i>  Найменше ціни на нерухомість зростають у таких країнах, як Німеччина, Швеція та Данія.</h3>
+                    <h3>У цих країнах ціни на нерухомість зростають на 5-10% щорічно.</h3>
+                </article>
+            </article>
+        </section>
+        <section class="itemSixth d-flex flex-column grid gap-4">
+            <h2>Країни у яких був проведений аналіз:</h2>
+            <article class="d-flex justify-content-evenly grid gap-5">
+                <ul class="list d-flex flex-column grid gap-2">
+                    <li>Данія</li>
+                    <li>Італія</li>
+                </ul>
+                <ul class="list d-flex flex-column grid gap-2">
+                    <li>Ірландія</li>
+                    <li>Іспанія</li>
+                </ul>
+                <ul class="list d-flex flex-column grid gap-2">
+                    <li>Німеччина</li>
+                    <li>Нідерланди</li>
+                </ul>
+                <ul class="list d-flex flex-column grid gap-2">
+                    <li>Португалія</li>
+                    <li>Франція</li>
+                    <li>Швеція</li>
+                </ul>
+            </article>
+            
 
         </section>
     </article>

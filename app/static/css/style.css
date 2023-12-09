@@ -28,8 +28,8 @@ h5{
     font-family: 'Raleway', sans-serif;
 }
 
-button{
-    font-size: 1.7vw;
+.btn{
+    font-size: 1.2vw;
     font-family: 'Comfortaa', sans-serif;
 }
 
@@ -39,6 +39,11 @@ section{
 
 header{
     padding-top: 1vw;
+}
+
+.list{
+    font-size: 1.7vw;
+    font-family: 'Raleway', sans-serif;
 }
 
 .navMenu ul{ 
