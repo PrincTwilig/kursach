@@ -29,7 +29,7 @@
             <h2>Конкретна дата</h2>
             <h4>Обиріть конкретну дату, щоб спостерігати сезонну змінність на ринку нерухомості країн Європи:</h4>
             <input id="heat-map-date" type="date" name="date">
-            <button id="heat-map-button" class="btn btn-primary rounded-5 px-4 fw-semibold">
+            <button id="heat-map-button" class="btn btn-primary">
                 Пошук <i class="bi bi-search"></i>
             </button>
             <p>Дата, введена користувачем: <strong>{{ date }}</strong></p>
@@ -61,20 +61,10 @@
                 </select>
                 <input id="comparison-date-start" type="date" name="date">
                 <input id="comparison-date-end" type="date" name="date">
-                <button class="btn btn-primary rounded-5 px-4 fw-semibold" id="comparison-button">Порівняти</button>
+                <button class="btn btn-primary" id="comparison-button">Порівняти</button>
                 <canvas id="comparison-chart"></canvas>
                 <img id="tmp-comp-img" src="{{ url_for('static', filename='img/diagram_4.png') }}" alt="diagram_4">
             </section>
-        </section>
-        <section class="itemFourth">
-            <h2>Графіки змін між датами</h2>
-            <h4>Обиріть конкретну дату, щоб спостерігати сезонну змінність на ринку нерухомості країн Європи:</h4>
-            <input type="date" name="date">
-            <button class="btn btn-primary rounded-5 px-4 fw-semibold">
-                Пошук <i class="bi bi-search"></i>
-            </button>
-            
-            <img src="{{ url_for('static', filename='img/diagram_5.png') }}" alt="diagram_5">
         </section>
     </article>
 </main>
