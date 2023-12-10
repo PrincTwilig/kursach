@@ -1,5 +1,5 @@
 /* css of index page */
-.picture{
+.picture {
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -8,15 +8,19 @@
     padding-top: 2vw;
 }
 
-.itemFirst{
+section {
+    padding-bottom: 6.944vw;
+}
+
+.itemFirst {
     padding-top: 8vw;
 }
 
-.item1 h4{
+.item1 h4 {
     padding-top: 2vw;
     padding-bottom: 3.4vw;
 }
 
-.item3{
+.item3 {
     padding-top: 5vw;
 }

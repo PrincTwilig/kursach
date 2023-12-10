@@ -5,53 +5,57 @@
 body {
     margin-right: 11.458vw;
     margin-left: 11.458vw;
-  }
-  
-h1{
+}
+
+h1 {
     font-size: 3.4vw;
     font-family: 'Comfortaa', sans-serif;
 }
-h2{
+
+h2 {
     font-size: 3vw;
     font-family: 'Comfortaa', sans-serif;
 }
-h3{
+
+h3 {
     font-size: 1.7vw;
     font-family: 'Raleway', sans-serif;
 }
-h4{
+
+h4 {
     font-size: 1.3vw;
     font-family: 'Raleway', sans-serif;
 }
-h5{
+
+h5 {
     font-size: 1vw;
     font-family: 'Raleway', sans-serif;
 }
 
-.btn{
+.btn {
     font-size: 1.2vw;
     font-family: 'Comfortaa', sans-serif;
 }
 
-section{
-    padding-bottom: 6.944vw;
-}
-
-header{
+header {
     padding-top: 1vw;
+    font-family: 'Comfortaa', sans-serif;
 }
 
-.list{
+footer {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.list {
     font-size: 1.7vw;
     font-family: 'Raleway', sans-serif;
 }
 
-.navMenu ul{ 
+.navMenu ul {
     gap: 3vw;
     list-style-type: none;
 }
 
-.itemFirst{
+.itemFirst {
     padding-top: 3vw;
 }
-

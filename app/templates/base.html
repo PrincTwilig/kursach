@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-between d-flex align-items-center ">
+        <nav class="d-flex justify-content-between pt-3">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url_for('index') }}"><img
                         src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" width="25" height="27"></a>
@@ -25,7 +25,7 @@
                 </button>
             </div>
             <div class="navMenu">
-                <ul class="navFirst d-flex align-items-center ">
+                <ul class="navFirst d-flex align-items-center pt-2">
                     <li><a class="nav-link" href="{{ url_for('index') }}">Головна</a>
                     <li><a class="nav-link" href="{{ url_for('search') }}">Динаміка</a>
                     <li><a class="nav-link" href="{{ url_for('timeline') }}">Сезонність</a>
@@ -39,14 +39,12 @@
     </div>
 
     <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <ul class="d-flex justify-content-center flex-row border-bottom pt-5 pb-3 mb-3" style="list-style-type: none;">
             <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link px-2 text-muted">Головна</a></li>
             <li class="nav-item"><a href="{{ url_for('search') }}" class="nav-link px-2 text-muted">Динаміка</a></li>
             <li class="nav-item"><a href="{{ url_for('timeline') }}" class="nav-link px-2 text-muted">Сезонність</a></li>
-            <li class="nav-item"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
-                    class="nav-link px-2 text-muted">About</a></li>
         </ul>
-        <p class="text-center text-muted">© 2022 Company, Inc</p>
+        <p class="text-center text-muted">© 2023 ZUNU course, Inc</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

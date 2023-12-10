@@ -4,7 +4,8 @@
 
 {% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/search.js') }}"></script>
 {% endblock %}
 
@@ -17,39 +18,53 @@
 {% block content %}
 <main>
     <article>
-        <section class="itemFirst">
+        <section class="itemFirst d-flex flex-column grid gap-4">
             <h1>Динаміка ринку</h1>
             <h3>Динаміка ринку нерухомості є важливим фактором, який слід враховувати при плануванні інвестицій у
                 нерухомість. Вона проявляється у змінах цін та попиту на житло в різні періоди часу.</h3>
         </section>
-        <section class="itemSecong">
-            <h2>Нерухомості за типом в місті</h2>
-            <h4>Обиріть конкретне місто та тип нерухомості, щоб отримати більш детальну інформацію:</h4>
-            <section class="SearchOne">
-                <select name="city" id="prop-graph-city">
-                    <option value="">Місто</option>
-                    <option value="Данія">Данія</option>
-                    <option value="Ірландія">Ірландія</option>
-                    <option value="Німеччина">Німеччина</option>
-                    <option value="Португалія">Португалія</option>
-                    <option value="Італія">Італія</option>
-                    <option value="Іспанія">Іспанія</option>
-                    <option value="Нідерланди">Нідерланди</option>
-                    <option value="Франція">Франція</option>
-                    <option value="Швеція">Швеція</option>
-                </select>
-                <button id="prop-graph-button" class="btn btn-primary">
-                    Пошук <i class="bi bi-search"></i>
-                </button>
+        <section class="d-flex flex-column grid gap-3">
+            <section class="itemSecong mt-5">
+                <section class="d-flex flex-column grid gap-3">
+                    <h2>Нерухомості за типом в місті</h2>
+                    <h4>Обиріть конкретне місто та тип нерухомості, щоб отримати більш детальну інформацію:</h4>
+                </section>
             </section>
-            <canvas id="prop-graph"></canvas>
-            <img id="tmp-prop-graph-img" src="{{ url_for('static', filename='img/diagram_1.png') }}" alt="diagram_1">
+            <section class="SearchOne">
+                <section class="d-flex flex-row grid gap-3">
+                    <select name="city" id="prop-graph-city" class="form-select" aria-label="Місто"
+                        style="width: 10vw;">
+                        <option selected>Місто</option>
+                        <option value="Данія">Данія</option>
+                        <option value="Ірландія">Ірландія</option>
+                        <option value="Німеччина">Німеччина</option>
+                        <option value="Португалія">Португалія</option>
+                        <option value="Італія">Італія</option>
+                        <option value="Іспанія">Іспанія</option>
+                        <option value="Нідерланди">Нідерланди</option>
+                        <option value="Франція">Франція</option>
+                        <option value="Швеція">Швеція</option>
+                    </select>
+                    <button id="prop-graph-button" class="btn btn-primary">
+                        Пошук <i class="bi bi-search"></i>
+                    </button>
+                </section>
+                <article class="d-flex justify-content-center align-items-center m-5">
+                    <canvas id="prop-graph" style="width: 50vw;"></canvas>
+                </article>
+            </section>
         </section>
+
         <section class="itemFourth">
-            <h2>Топ по містам</h2>
-            <h4>Ми зібрали для вас список міст Європи, які пропонують найкраще співвідношення ціни та якості
-                нерухомості:</h4>
-            <canvas id="top-graph"></canvas>
+            <section class="d-flex flex-column grid gap-3">
+                <h2>Топ по містам</h2>
+                <h4>Ми зібрали для вас список міст Європи, які пропонують найкраще співвідношення ціни та якості
+                    нерухомості:</h4>
+            </section>
+
+            <article class="d-flex justify-content-center align-items-center pt-5">
+                <canvas id="top-graph" style="width: 50vw;"></canvas>
+            </article>
         </section>
     </article>
 </main>
